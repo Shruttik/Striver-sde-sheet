@@ -83,11 +83,45 @@ Greedy + Dynamic Programming thinking
 
 ---
 
+---
+
+## 3️⃣ Move Zeroes
+
+### Topic:
+Array
+
+### Difficulty:
+Easy
+
+### 🔹 Approach:
+- Used two-pointer technique.
+- `fast` scans the array.
+- `slow` tracks position for next non-zero element.
+- Swapped when non-zero encountered.
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Two-pointer technique
+In-place stable compaction
+
+### 🔹 Mistakes Made:
+- Initially used extra loop variable unnecessarily.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic   | Problems Solved |
 |----------|-----------------|
-| Arrays   | 2 |
+| Arrays   | 3 |
 | Sorting  | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
