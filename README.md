@@ -156,11 +156,93 @@ Cancellation logic (majority survives pair elimination)
 - Day 7:
 - Day 21:
 
+---
+
+## 5️⃣ Sort Colors (Dutch National Flag)
+
+### Topic:
+Array
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- Used three-pointer technique (low, mid, high).
+- Maintained invariant:
+  - [0 ... low-1] → 0s
+  - [low ... mid-1] → 1s
+  - [mid ... high] → unknown
+  - [high+1 ... end] → 2s
+- If nums[mid] == 0 → swap with low, increment both.
+- If nums[mid] == 1 → move mid.
+- If nums[mid] == 2 → swap with high, decrement high (do NOT increment mid).
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Dutch National Flag Algorithm  
+3-way partitioning  
+Pointer-based in-place sorting  
+
+### 🔹 Mistakes Made:
+- Initially used wrong pointer initialization.
+- Used for-loop instead of while(mid <= high).
+- Didn’t understand why mid is not incremented after swapping with high.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
+## 6️⃣ Next Permutation
+
+### Topic:
+Array
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- Traverse from right to find pivot index `i` such that nums[i] < nums[i+1].
+- If no pivot found → reverse entire array.
+- Otherwise:
+  - Find smallest element greater than nums[i] from right side.
+  - Swap them.
+  - Reverse the suffix (i+1 to end).
+- Reversing works because suffix is already in descending order.
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Lexicographical ordering  
+Right-to-left scanning  
+Suffix reversal optimization  
+
+### 🔹 Mistakes Made:
+- Initially incorrect loop bounds.
+- Used assignment instead of comparison (ind = -1).
+- Forgot why suffix reversal works.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic   | Problems Solved |
 |----------|-----------------|
-| Arrays   | 4 |
+| Arrays   | 6 |
 | Sorting  | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
