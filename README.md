@@ -10,7 +10,7 @@
 
 ---
 
-## 1️⃣ Two Sum
+## 1️⃣ Two Sum  01 march
 
 ### Topic:
 Array
@@ -44,7 +44,7 @@ Complement search using HashMap (Single-pass hashing)
 
 ---
 
-## 2️⃣ Maximum Subarray (Kadane’s Algorithm)
+## 2️⃣ Maximum Subarray (Kadane’s Algorithm) 01 march
 
 ### Topic:
 Array
@@ -85,7 +85,7 @@ Greedy + Dynamic Programming thinking
 
 ---
 
-## 3️⃣ Move Zeroes
+## 3️⃣ Move Zeroes 01 march
 
 ### Topic:
 Array
@@ -117,11 +117,50 @@ In-place stable compaction
 - Day 7:
 - Day 21:
 
+---
+
+## 4️⃣ Majority Element 02 March
+
+### Topic:
+Array
+
+### Difficulty:
+Easy
+
+### 🔹 Approach:
+- First thought of using HashMap to count frequencies.
+- Observed that majority element appears more than n/2 times.
+- Used Boyer–Moore Voting Algorithm:
+  - Maintain candidate and count.
+  - If count becomes 0, update candidate.
+  - Increment count if same element, decrement otherwise.
+- Final candidate is the majority element (given guarantee).
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Boyer–Moore Voting Algorithm  
+Cancellation logic (majority survives pair elimination)
+
+### 🔹 Mistakes Made:
+- Initially forgot to return candidate.
+- Forgot to define `n = nums.size()`.
+- Needed deeper understanding of cancellation logic.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic   | Problems Solved |
 |----------|-----------------|
-| Arrays   | 3 |
+| Arrays   | 4 |
 | Sorting  | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
