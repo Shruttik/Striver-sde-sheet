@@ -238,6 +238,48 @@ Suffix reversal optimization
 - Day 7:
 - Day 21:
 
+---
+
+## 7️⃣ Merge Intervals – 03 March
+
+### Topic:
+Array / Intervals
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- Sorted intervals based on starting time.
+- Created result vector to store merged intervals.
+- Pushed first interval as base.
+- Iterated from index 1:
+  - If current start <= last merged end → merged them.
+  - Updated end using max(previous_end, current_end).
+  - Else → pushed new interval.
+- Sorting ensures overlapping intervals become adjacent.
+
+### 🔹 Time Complexity:
+O(n log n)  (sorting dominates)
+
+### 🔹 Space Complexity:
+O(n)  (result storage)
+
+### 🔹 Pattern Used:
+Interval Merging  
+Sorting + Greedy  
+Compare with last merged interval  
+
+### 🔹 Mistakes Made:
+- Initially confused with indexing in vector<vector<int>>.
+- Started loop from index 0 instead of 1.
+- Forgot to handle empty input case.
+- Needed clarity on why first interval is pushed without comparison.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic   | Problems Solved |
