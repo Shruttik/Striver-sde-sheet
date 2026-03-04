@@ -280,6 +280,44 @@ Compare with last merged interval
 - Day 7:
 - Day 21:
 
+---
+
+## 8️⃣ Set Matrix Zeroes – 03 March
+
+### Topic:
+Array / Matrix
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- First thought of marking rows and columns using separate arrays.
+- Optimized space by using first row and first column of the matrix as markers.
+- Stored whether first row and first column originally contained zero using boolean flags.
+- Marked rows and columns when encountering a zero.
+- Updated matrix based on markers.
+- Finally handled first row and first column separately.
+
+### 🔹 Time Complexity:
+O(m × n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Matrix marking technique  
+Using matrix itself as storage for row/column markers  
+
+### 🔹 Mistakes Made:
+- Mixed up row and column indexing.
+- Used incorrect marker value (1 instead of 0).
+- Initially used extra arrays instead of optimal approach.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic   | Problems Solved |
