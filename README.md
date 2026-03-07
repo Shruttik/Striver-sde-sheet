@@ -10,7 +10,7 @@
 
 ---
 
-## 1️⃣ Two Sum  01 march
+## 1️⃣ Two Sum – 01 March (Day 1)
 
 ### Topic:
 Array
@@ -21,7 +21,7 @@ Easy
 ### 🔹 Approach:
 - First understood brute force using nested loops.
 - Optimized using single-pass HashMap.
-- For each element, checked if complement (target - nums[i]) exists before inserting current element.
+- For each element checked if complement exists before inserting current element.
 
 ### 🔹 Time Complexity:
 O(n)
@@ -30,21 +30,21 @@ O(n)
 O(n)
 
 ### 🔹 Pattern Used:
-Complement search using HashMap (Single-pass hashing)
+Complement search using HashMap
 
 ### 🔹 Mistakes Made:
 - Incorrect usage of `mp.find()`
 - Initially used two-pass approach
-- Did not think about self-matching case
+- Didn't consider self-matching case
 
 ### 🔹 Revision Dates:
-- Day 3:
+- Day 3: 04 March
 - Day 7:
 - Day 21:
 
 ---
 
-## 2️⃣ Maximum Subarray (Kadane’s Algorithm) 01 march
+## 2️⃣ Maximum Subarray (Kadane’s Algorithm) – 01 March (Day 1)
 
 ### Topic:
 Array
@@ -53,12 +53,11 @@ Array
 Medium
 
 ### 🔹 Approach:
-- Wrote brute force to check all possible subarrays.
-- Observed that if running sum becomes negative, it reduces future sums.
-- Used Kadane’s Algorithm:
-  - Maintained running sum.
-  - Updated global maximum at each step.
-  - Reset running sum when it became negative.
+- Observed that negative running sums reduce future sums.
+- Used Kadane's algorithm:
+  - Maintain running sum
+  - Update maximum sum
+  - Reset sum when negative
 
 ### 🔹 Time Complexity:
 O(n)
@@ -67,25 +66,20 @@ O(n)
 O(1)
 
 ### 🔹 Pattern Used:
-Running prefix sum  
-Discard negative prefix  
-Greedy + Dynamic Programming thinking  
+Running prefix sum / Greedy
 
 ### 🔹 Mistakes Made:
-- Incorrect brute force implementation initially
-- Did not reset sum for each starting index
-- Incorrect max initialization in early attempt
+- Incorrect brute force logic initially
+- Wrong max initialization
 
 ### 🔹 Revision Dates:
-- Day 3:
+- Day 3: 04 March
 - Day 7:
 - Day 21:
 
 ---
 
----
-
-## 3️⃣ Move Zeroes 01 march
+## 3️⃣ Move Zeroes – 01 March (Day 1)
 
 ### Topic:
 Array
@@ -94,10 +88,10 @@ Array
 Easy
 
 ### 🔹 Approach:
-- Used two-pointer technique.
-- `fast` scans the array.
-- `slow` tracks position for next non-zero element.
-- Swapped when non-zero encountered.
+- Used two pointers:
+  - `fast` scans array
+  - `slow` marks next non-zero position
+- Swap when non-zero element found
 
 ### 🔹 Time Complexity:
 O(n)
@@ -106,20 +100,19 @@ O(n)
 O(1)
 
 ### 🔹 Pattern Used:
-Two-pointer technique
-In-place stable compaction
+Two Pointer Technique
 
 ### 🔹 Mistakes Made:
-- Initially used extra loop variable unnecessarily.
+- Initially used unnecessary loop variable
 
 ### 🔹 Revision Dates:
-- Day 3:
+- Day 3: 04 March
 - Day 7:
 - Day 21:
 
 ---
 
-## 4️⃣ Majority Element 02 March
+## 4️⃣ Majority Element – 02 March (Day 2)
 
 ### Topic:
 Array
@@ -128,13 +121,9 @@ Array
 Easy
 
 ### 🔹 Approach:
-- First thought of using HashMap to count frequencies.
-- Observed that majority element appears more than n/2 times.
-- Used Boyer–Moore Voting Algorithm:
-  - Maintain candidate and count.
-  - If count becomes 0, update candidate.
-  - Increment count if same element, decrement otherwise.
-- Final candidate is the majority element (given guarantee).
+- Used Boyer–Moore Voting Algorithm
+- Maintain candidate and count
+- Reset candidate when count becomes zero
 
 ### 🔹 Time Complexity:
 O(n)
@@ -143,13 +132,11 @@ O(n)
 O(1)
 
 ### 🔹 Pattern Used:
-Boyer–Moore Voting Algorithm  
-Cancellation logic (majority survives pair elimination)
+Boyer–Moore Voting Algorithm
 
 ### 🔹 Mistakes Made:
-- Initially forgot to return candidate.
-- Forgot to define `n = nums.size()`.
-- Needed deeper understanding of cancellation logic.
+- Forgot to return candidate
+- Needed deeper understanding of cancellation logic
 
 ### 🔹 Revision Dates:
 - Day 3:
@@ -158,7 +145,7 @@ Cancellation logic (majority survives pair elimination)
 
 ---
 
-## 5️⃣ Sort Colors (Dutch National Flag)
+## 5️⃣ Sort Colors – 02 March (Day 2)
 
 ### Topic:
 Array
@@ -167,15 +154,9 @@ Array
 Medium
 
 ### 🔹 Approach:
-- Used three-pointer technique (low, mid, high).
-- Maintained invariant:
-  - [0 ... low-1] → 0s
-  - [low ... mid-1] → 1s
-  - [mid ... high] → unknown
-  - [high+1 ... end] → 2s
-- If nums[mid] == 0 → swap with low, increment both.
-- If nums[mid] == 1 → move mid.
-- If nums[mid] == 2 → swap with high, decrement high (do NOT increment mid).
+- Used Dutch National Flag algorithm
+- Three pointers: `low`, `mid`, `high`
+- Partition 0s,1s,2s
 
 ### 🔹 Time Complexity:
 O(n)
@@ -184,14 +165,11 @@ O(n)
 O(1)
 
 ### 🔹 Pattern Used:
-Dutch National Flag Algorithm  
-3-way partitioning  
-Pointer-based in-place sorting  
+Dutch National Flag Algorithm
 
 ### 🔹 Mistakes Made:
-- Initially used wrong pointer initialization.
-- Used for-loop instead of while(mid <= high).
-- Didn’t understand why mid is not incremented after swapping with high.
+- Wrong pointer initialization initially
+- Didn't understand why `mid` doesn't increment after swapping with `high`
 
 ### 🔹 Revision Dates:
 - Day 3:
@@ -200,7 +178,7 @@ Pointer-based in-place sorting
 
 ---
 
-## 6️⃣ Next Permutation
+## 6️⃣ Next Permutation – 02 March (Day 2)
 
 ### Topic:
 Array
@@ -209,13 +187,9 @@ Array
 Medium
 
 ### 🔹 Approach:
-- Traverse from right to find pivot index `i` such that nums[i] < nums[i+1].
-- If no pivot found → reverse entire array.
-- Otherwise:
-  - Find smallest element greater than nums[i] from right side.
-  - Swap them.
-  - Reverse the suffix (i+1 to end).
-- Reversing works because suffix is already in descending order.
+1. Find pivot where `nums[i] < nums[i+1]`
+2. Swap with next greater element
+3. Reverse suffix
 
 ### 🔹 Time Complexity:
 O(n)
@@ -224,14 +198,11 @@ O(n)
 O(1)
 
 ### 🔹 Pattern Used:
-Lexicographical ordering  
-Right-to-left scanning  
-Suffix reversal optimization  
+Lexicographical Permutation Logic
 
 ### 🔹 Mistakes Made:
-- Initially incorrect loop bounds.
-- Used assignment instead of comparison (ind = -1).
-- Forgot why suffix reversal works.
+- Incorrect loop bounds
+- Used assignment instead of comparison
 
 ### 🔹 Revision Dates:
 - Day 3:
@@ -240,40 +211,31 @@ Suffix reversal optimization
 
 ---
 
-## 7️⃣ Merge Intervals – 03 March
+## 7️⃣ Merge Intervals – 03 March (Day 3)
 
 ### Topic:
-Array / Intervals
+Intervals / Array
 
 ### Difficulty:
 Medium
 
 ### 🔹 Approach:
-- Sorted intervals based on starting time.
-- Created result vector to store merged intervals.
-- Pushed first interval as base.
-- Iterated from index 1:
-  - If current start <= last merged end → merged them.
-  - Updated end using max(previous_end, current_end).
-  - Else → pushed new interval.
-- Sorting ensures overlapping intervals become adjacent.
+- Sort intervals
+- Compare with last merged interval
+- Merge if overlapping
 
 ### 🔹 Time Complexity:
-O(n log n)  (sorting dominates)
+O(n log n)
 
 ### 🔹 Space Complexity:
-O(n)  (result storage)
+O(n)
 
 ### 🔹 Pattern Used:
-Interval Merging  
-Sorting + Greedy  
-Compare with last merged interval  
+Sorting + Greedy
 
 ### 🔹 Mistakes Made:
-- Initially confused with indexing in vector<vector<int>>.
-- Started loop from index 0 instead of 1.
-- Forgot to handle empty input case.
-- Needed clarity on why first interval is pushed without comparison.
+- Confusion with indexing
+- Initially started loop from index 0
 
 ### 🔹 Revision Dates:
 - Day 3:
@@ -282,21 +244,18 @@ Compare with last merged interval
 
 ---
 
-## 8️⃣ Set Matrix Zeroes – 03 March
+## 8️⃣ Set Matrix Zeroes – 03 March (Day 3)
 
 ### Topic:
-Array / Matrix
+Matrix
 
 ### Difficulty:
 Medium
 
 ### 🔹 Approach:
-- First thought of marking rows and columns using separate arrays.
-- Optimized space by using first row and first column of the matrix as markers.
-- Stored whether first row and first column originally contained zero using boolean flags.
-- Marked rows and columns when encountering a zero.
-- Updated matrix based on markers.
-- Finally handled first row and first column separately.
+- Used first row and column as markers
+- Tracked `rowzero` and `colzero`
+- Marked rows and columns then updated matrix
 
 ### 🔹 Time Complexity:
 O(m × n)
@@ -305,25 +264,57 @@ O(m × n)
 O(1)
 
 ### 🔹 Pattern Used:
-Matrix marking technique  
-Using matrix itself as storage for row/column markers  
+Matrix Marking Technique
 
 ### 🔹 Mistakes Made:
-- Mixed up row and column indexing.
-- Used incorrect marker value (1 instead of 0).
-- Initially used extra arrays instead of optimal approach.
+- Row/column indexing confusion
+- Swapped row and column loops
 
 ### 🔹 Revision Dates:
 - Day 3:
 - Day 7:
 - Day 21:
 
+---
+
+## 9️⃣ Best Time to Buy and Sell Stock – 03 March (Day 3)
+
+### Topic:
+Array / Greedy
+
+### Difficulty:
+Easy
+
+### 🔹 Approach:
+- Maintain minimum price seen so far
+- Calculate profit for each day
+- Track maximum profit
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Greedy / Minimum Prefix Tracking
+
+### 🔹 Mistakes Made:
+- Initially thought of brute force O(n²)
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 # 📊 Progress Tracker
 
-| Topic   | Problems Solved |
-|----------|-----------------|
-| Arrays   | 6 |
-| Sorting  | 0 |
+| Topic | Problems Solved |
+|------|----------------|
+| Arrays | 9 |
+| Sorting | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
 | Linked List | 0 |
@@ -337,26 +328,42 @@ Using matrix itself as storage for row/column markers
 
 ---
 
-# 🧠 Pattern Notebook (To Be Updated)
+# 🧠 Pattern Notebook
 
-- Complement Search using Hashing  
-- Running Prefix Sum  
-- Two Pointer Technique  
-- Sliding Window  
-- Binary Search on Answer  
-- DFS Template  
-- BFS Template  
-- DP Memoization Template  
+### Hashing
+- Complement search (Two Sum)
+
+### Greedy
+- Kadane's Algorithm
+- Stock Buy/Sell
+
+### Two Pointers
+- Move Zeroes
+
+### Voting Algorithm
+- Boyer–Moore
+
+### Partitioning
+- Dutch National Flag
+
+### Permutation Logic
+- Next Permutation
+
+### Interval Problems
+- Merge Intervals
+
+### Matrix Tricks
+- Matrix Marker Technique
 
 ---
 
 # 🚀 Weekly Goals
 
-- Week 1: Strong Array foundation
-- Week 2: Binary Search + Recursion
-- Week 3: Linked List + Stack
-- Week 4: Trees Basics
-- Week 5: Trees Advanced + Heap
-- Week 6: Graphs
-- Week 7: DP Basics
+- Week 1: Strong Array foundation  
+- Week 2: Binary Search + Recursion  
+- Week 3: Linked List + Stack  
+- Week 4: Trees Basics  
+- Week 5: Trees Advanced + Heap  
+- Week 6: Graphs  
+- Week 7: DP Basics  
 - Week 8: Full Revision + Mock Practice
