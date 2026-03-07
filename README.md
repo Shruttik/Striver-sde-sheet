@@ -309,11 +309,46 @@ Greedy / Minimum Prefix Tracking
 
 ---
 
+## 🔟 Pascal’s Triangle – 04 March (Day 4)
+
+### Topic:
+Array / Matrix Construction
+
+### Difficulty:
+Easy
+
+### 🔹 Approach:
+- Constructed Pascal's Triangle row by row.
+- For each row `i`, created a vector of size `i + 1`.
+- First and last elements of every row are always `1`.
+- Middle elements are computed using the previous row:
+  - `row[j] = ans[i-1][j-1] + ans[i-1][j]`
+- After building the row, pushed it into the result vector.
+
+### 🔹 Time Complexity:
+O(n²)
+
+### 🔹 Space Complexity:
+O(n²)
+
+### 🔹 Pattern Used:
+Dynamic construction using previous state  
+Triangle building pattern
+
+### 🔹 Mistakes Made:
+- Initially confused whether to use a full 2D matrix or build rows one by one.
+- Needed clarity on how middle elements depend on the previous row.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
 |------|----------------|
-| Arrays | 9 |
+| Arrays | 10 |
 | Sorting | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
