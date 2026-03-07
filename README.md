@@ -344,11 +344,51 @@ Triangle building pattern
 - Day 7:
 - Day 21:
 
+---
+
+## 1️⃣1️⃣ Rotate Image – 04 March (Day 4)
+
+### Topic:
+Array / Matrix
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- The matrix must be rotated **90° clockwise in-place**.
+- Used a two-step transformation trick:
+  1. **Transpose the matrix**  
+     - Swap elements across the diagonal:  
+       `matrix[i][j] ↔ matrix[j][i]`
+     - Only iterate the upper triangle (`j = i + 1`) to avoid double swapping.
+  2. **Reverse each row**  
+     - This shifts elements to the correct rotated positions.
+- The combination of **transpose + row reversal** produces a 90° clockwise rotation.
+
+### 🔹 Time Complexity:
+O(n²)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Matrix transformation  
+Transpose + Reverse technique
+
+### 🔹 Mistakes Made:
+- Initially transposed the entire matrix (`j = 0 → n`) which caused elements to swap twice.
+- Learned that transpose must only iterate the **upper triangle (`j = i + 1`)**.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
 |------|----------------|
-| Arrays | 10 |
+| Arrays | 11 |
 | Sorting | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
