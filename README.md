@@ -384,11 +384,48 @@ Transpose + Reverse technique
 - Day 7:
 - Day 21:
 
+---
+
+## 1️⃣2️⃣ Subarray Sum Equals K – 04 March (Day 4)
+
+### Topic:
+Array / Hashing / Prefix Sum
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- Used **prefix sum + hashmap** technique.
+- Maintained a running sum `presum` while iterating through the array.
+- For each element, checked whether `(presum - k)` had appeared before.
+- If it exists, that means a previous prefix sum forms a subarray whose sum equals `k`.
+- Stored prefix sums and their frequencies in a hashmap to efficiently count valid subarrays.
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(n)
+
+### 🔹 Pattern Used:
+Prefix Sum + Hashmap  
+Subarray sum difference trick  
+`prefix[j] - prefix[i] = k`
+
+### 🔹 Mistakes Made:
+- Initially incremented `mp[diff]` instead of only using it for counting.
+- Needed deeper understanding of how prefix differences form subarray sums.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
 |------|----------------|
-| Arrays | 11 |
+| Arrays | 12 |
 | Sorting | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
