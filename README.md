@@ -421,11 +421,49 @@ Subarray sum difference trick
 - Day 7:
 - Day 21:
 
+---
+
+## 1️⃣3️⃣ Longest Consecutive Sequence – 05 March (Day 5)
+
+### Topic:
+Array / Hashing
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- Used an **unordered_set** to store all numbers for O(1) lookups.
+- Iterated through the numbers and only started counting a sequence when the current number had **no previous element (`num - 1`) in the set**.
+- If it is the start of a sequence, expanded forward:
+  - Checked for `num + 1`, `num + 2`, `num + 3` and so on.
+  - Counted the length of that sequence.
+- Updated the maximum sequence length found.
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(n)
+
+### 🔹 Pattern Used:
+Hashing + Sequence Expansion  
+Set lookup optimization
+
+### 🔹 Mistakes Made:
+- Initially iterated over the vector instead of the set which could cause unnecessary work when duplicates exist.
+- Forgot to reset `length` inside the sequence counting logic.
+- Needed clarity on why sequences should only start when `(num - 1)` is not present.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
 |------|----------------|
-| Arrays | 12 |
+| Arrays | 13 |
 | Sorting | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
