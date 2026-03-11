@@ -459,11 +459,43 @@ Set lookup optimization
 - Day 7:
 - Day 21:
 
+## 1️⃣4️⃣ Product of Array Except Self – 05 March (Day 5)
+
+### Topic:
+Array / Prefix Product
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- Built prefix products from the left side.
+- Stored them directly in the result array.
+- Traversed from the right while maintaining a running product.
+- Multiplied the right product with the stored left product.
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(1) (excluding output array)
+
+### 🔹 Pattern Used:
+Prefix product technique  
+Left × Right product decomposition
+
+### 🔹 Mistakes Made:
+- Initially started the right traversal from `n-2` instead of `n-1`.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
 |------|----------------|
-| Arrays | 13 |
+| Arrays | 14 |
 | Sorting | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
