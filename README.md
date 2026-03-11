@@ -533,6 +533,50 @@ Dynamic programming with sign tracking
 - Day 7:
 - Day 21:
 
+---
+
+## 1️⃣6️⃣ Count Subarrays With Given XOR – 11 March (Day 6)
+
+### Topic:
+Array / Hashing / Prefix XOR
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- Used **prefix XOR technique with a hashmap**.
+- Maintained a running XOR (`prefixXor`) while traversing the array.
+- A subarray XOR equals `k` when:
+
+  `prefixXor[j] ^ prefixXor[i-1] = k`
+
+- Rearranging:
+
+  `prefixXor[i-1] = prefixXor[j] ^ k`
+
+- So while iterating, we check if `(prefixXor ^ k)` has appeared before.
+- If it exists in the hashmap, it means a valid subarray ending at the current index exists.
+- The hashmap stores the **frequency of prefix XOR values** encountered so far.
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(n)
+
+### 🔹 Pattern Used:
+Prefix XOR + Hashmap  
+XOR prefix difference trick
+
+### 🔹 Mistakes Made:
+- Initially incremented the count by `1` instead of adding the stored frequency from the hashmap.
+- Needed to understand why multiple occurrences of the same prefix XOR create multiple valid subarrays.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
