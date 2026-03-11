@@ -491,11 +491,53 @@ Left × Right product decomposition
 - Day 7:
 - Day 21:
 
+---
+
+## 1️⃣5️⃣ Maximum Product Subarray – 05 March (Day 5)
+
+### Topic:
+Array / Dynamic Programming
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- The product of a subarray can change drastically when encountering **negative numbers**.
+- A negative number can turn a large positive product into a negative one, and a large negative product into a positive one.
+- Therefore, we track both:
+  - `currentMax` → maximum product ending at current position
+  - `currentMin` → minimum product ending at current position
+- For each element we compute:
+
+  newMax = max(num, num × prevMax, num × prevMin)  
+  newMin = min(num, num × prevMax, num × prevMin)
+
+- Update the global maximum product at each step.
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Modified Kadane’s Algorithm  
+Dynamic programming with sign tracking
+
+### 🔹 Mistakes Made:
+- Initially updated `currmax` before computing `currmin`, causing incorrect calculations.
+- Learned that the previous `currmax` must be stored temporarily before updating.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
 |------|----------------|
-| Arrays | 14 |
+| Arrays | 15 |
 | Sorting | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
