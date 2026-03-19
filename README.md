@@ -623,11 +623,61 @@ Transforming values to reduce the problem to **subarray sum = 0**
 - Day 7:
 - Day 21:
 
+---
+
+## 1️⃣8️⃣ Longest Subarray with Sum K – 19 March (Day 6)
+
+### Topic:
+Array / Prefix Sum / Hashing
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- The array contains positive and negative integers.
+- The task is to:
+  - **Find the longest subarray with sum = K.**
+- Maintained a running prefix sum while traversing the array.
+- Used a hashmap to store the **first index where each prefix sum appears**.
+- If at any index `i`, the prefix sum becomes equal to `K`, it means the subarray from `0 → i` has sum `K`.
+- For the general case, checked if `(prefixSum - K)` exists in the hashmap:
+  - If it exists, it means a subarray ending at index `i` has sum `K`.
+- Calculated the subarray length using:
+
+  `length = current_index - first_index_of_prefix_sum`
+
+- Updated the maximum length accordingly.
+- Stored prefix sum only if it was not already present to ensure maximum length.
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(n)
+
+### 🔹 Pattern Used:
+Prefix Sum + Hashmap  
+Subarray sum difference technique  
+First occurrence tracking
+
+### 🔹 Mistakes Made:
+- Used `diff` instead of `prefixSum` while inserting into hashmap.
+- Incorrect use of `else` which skipped valid insertions.
+- Initialized `maxlength` incorrectly using `INT_MIN`.
+- Confused between counting subarrays and finding the **maximum length**.
+- Learned that the hashmap must store the **first occurrence of prefix sums**.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
 |------|----------------|
-| Arrays | 15 |
+| Arrays | 18 |
 | Sorting | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
