@@ -577,6 +577,52 @@ XOR prefix difference trick
 - Day 7:
 - Day 21:
 
+---
+
+## 1️⃣7️⃣ Longest Subarray With Equal Number of 0s and 1s – 11 March (Day 6)
+
+### Topic:
+Array / Prefix Sum / Hashing
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- The array contains only `0` and `1`.
+- Converted the problem into a prefix sum problem by replacing:
+  - `0 → -1`
+  - `1 → 1`
+- After this transformation, the task becomes:
+  - **Find the longest subarray with sum = 0.**
+- Maintained a running prefix sum while traversing the array.
+- Used a hashmap to store the **first index where each prefix sum appears**.
+- If the same prefix sum appears again at index `i`, it means the subarray between the two indices has sum `0`.
+- Calculated the subarray length using:
+
+  `length = current_index - first_index_of_prefix_sum`
+
+- Updated the maximum length accordingly.
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(n)
+
+### 🔹 Pattern Used:
+Prefix Sum + Hashmap  
+Transforming values to reduce the problem to **subarray sum = 0**
+
+### 🔹 Mistakes Made:
+- Initially used `==` instead of `=` while converting `0` to `-1`.
+- Initially tried counting subarrays instead of finding the **maximum length**.
+- Learned that the hashmap must store the **first occurrence of prefix sums**.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
