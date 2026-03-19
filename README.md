@@ -673,11 +673,59 @@ First occurrence tracking
 - Day 21:
 
 ---
+
+---
+
+## 1️⃣9️⃣ Find the Duplicate Number – 19 March (Day 7)
+
+### Topic:
+Array / Linked List / Cycle Detection
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- The array is treated as a linked list where each index points to the value at that index.
+- Since numbers are in the range `1 → n`, a duplicate creates a cycle.
+- Used Floyd’s Cycle Detection Algorithm (Tortoise and Hare).
+
+- Phase 1:
+  - Used two pointers:
+    - Slow moves one step
+    - Fast moves two steps
+  - If they meet, a cycle exists.
+
+- Phase 2:
+  - Reset one pointer to the start.
+  - Move both pointers one step at a time.
+  - The point where they meet again is the **duplicate number (cycle entry)**.
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Floyd’s Cycle Detection  
+Linked List Cycle Detection in Array
+
+### 🔹 Mistakes Made:
+- Initially tried to detect duplicate in first meeting point.
+- Forgot to reset one pointer for Phase 2.
+- Incorrectly moved fast pointer by 2 steps in Phase 2.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
 |------|----------------|
-| Arrays | 18 |
+| Arrays | 19 |
 | Sorting | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
