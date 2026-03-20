@@ -773,6 +773,51 @@ Reverse Merge Strategy
 - Day 21:
 
 ---
+
+## 2️⃣1️⃣ Missing and Repeating Number – 19 March (Day 7)
+
+### Topic:
+Array / Hashing
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- The array contains numbers from `1 → n`, where one number is missing and one number is repeating.
+- Used a hashmap to store the frequency of each element.
+- Traversed the array and updated frequency using:
+
+  `mp[arr[i]]++`
+
+- Iterated from `1 → n` to ensure all numbers are checked:
+  - If `mp[i] == 2`, then `i` is the **repeating number**.
+  - If `mp[i] == 0`, then `i` is the **missing number**.
+- Used the property of hashmap where accessing `mp[i]` creates the key with default value `0` if it does not exist.
+- Stored results in vector as `[repeating, missing]`.
+
+### 🔹 Time Complexity:
+O(n)
+
+### 🔹 Space Complexity:
+O(n)
+
+### 🔹 Pattern Used:
+Hashing / Frequency Count  
+Array Frequency Tracking
+
+### 🔹 Mistakes Made:
+- Tried iterating directly over hashmap which skipped missing element.
+- Confused between `mp.find(i)` and `mp[i]` behavior.
+- Faced segmentation fault due to uninitialized vector.
+- Initially used wrong range (`0 → n-1` instead of `1 → n`).
+- Pushed duplicate multiple times instead of assigning once.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
