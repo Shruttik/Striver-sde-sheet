@@ -721,11 +721,63 @@ Linked List Cycle Detection in Array
 - Day 21:
 
 ---
+
+
+## 2️⃣0️⃣ Merge Two Sorted Arrays (No Extra Space) – 19 March (Day 7)
+
+### Topic:
+Array / Two Pointers
+
+### Difficulty:
+Easy
+
+### 🔹 Approach:
+- Given two sorted arrays, the task is to merge them into `nums1` without using extra space.
+- Observed that the end of `nums1` has empty space to accommodate elements of `nums2`.
+- Used **three pointers**:
+  - `m - 1` → last valid element in `nums1`
+  - `n - 1` → last element in `nums2`
+  - `k = m + n - 1` → last index of `nums1`
+
+- Compared elements from the back:
+  - If `nums1[m] > nums2[n]`, placed `nums1[m]` at `nums1[k]`
+  - Otherwise, placed `nums2[n]` at `nums1[k]`
+
+- Decremented pointers accordingly after each placement.
+- Continued until all elements of `nums2` are placed.
+
+- Important:
+  - Loop runs while `n >= 0` because remaining elements of `nums2` must be inserted.
+  - Remaining elements of `nums1` are already in correct position.
+
+### 🔹 Time Complexity:
+O(m + n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Two Pointer Technique  
+Reverse Merge Strategy
+
+### 🔹 Mistakes Made:
+- Confused array size with last index (`m` vs `m-1`, `n` vs `n-1`)
+- Caused out-of-bounds access by using `nums1[m]` and `nums2[n]`
+- Missed boundary condition when `m < 0`
+- Incorrect use of `else if` leading to undefined behavior
+- Used unnecessary variable `max`
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
 |------|----------------|
-| Arrays | 19 |
+| Arrays | 20 |
 | Sorting | 0 |
 | Binary Search | 0 |
 | Recursion | 0 |
