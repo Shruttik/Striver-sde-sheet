@@ -871,13 +871,65 @@ Divide and Conquer
 
 ---
 
+
+## 2️⃣3️⃣ Lower Bound / Upper Bound – 20 March (Day 8)
+
+### Topic:
+Array / Binary Search
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- The array is sorted, allowing the use of **Binary Search** to find positions instead of exact elements.
+
+- **Lower Bound**:
+  - Finds the first index where `arr[i] >= target`.
+  - If `arr[mid] >= target`, store `mid` as a possible answer and move left.
+  - Else, move right.
+
+- **Upper Bound**:
+  - Finds the first index where `arr[i] > target`.
+  - If `arr[mid] > target`, store `mid` as a possible answer and move left.
+  - Else, move right.
+
+- Used an `ans` variable to track the **best valid index** during search.
+- Initialized `ans = n` to handle cases where no valid index exists.
+
+- Important:
+  - Do NOT return `mid` because it is only the last checked position.
+  - Always return `ans`, which stores the correct boundary index.
+
+### 🔹 Time Complexity:
+O(log n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Binary Search Variant  
+First Valid Position Search
+
+### 🔹 Mistakes Made:
+- Confused conditions between lower bound (`>=`) and upper bound (`>`).
+- Initially returned `mid` instead of maintaining an answer variable.
+- Did not track the first valid index properly.
+- Needed clarity on why binary search continues even after finding a valid answer.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
 |------|----------------|
-| Arrays | 20 |
+| Arrays | 21 |
 | Sorting | 0 |
-| Binary Search | 0 |
+| Binary Search | 3 |
 | Recursion | 0 |
 | Linked List | 0 |
 | Stack & Queue | 0 |
