@@ -921,7 +921,59 @@ First Valid Position Search
 - Day 7:
 - Day 21:
 
+
 ---
+
+## 2️⃣4️⃣ Search Insert Position – 20 March (Day 8)
+
+### Topic:
+Array / Binary Search
+
+### Difficulty:
+Easy
+
+### 🔹 Approach:
+- The array is sorted, so binary search is used.
+- The problem is equivalent to finding the **lower bound**:
+  
+  `first index where nums[i] >= target`
+
+- Initialized:
+  - `low = 0`
+  - `high = n - 1`
+  - `ans = n`
+
+- During binary search:
+  - If `nums[mid] >= target`:
+    - Store `mid` as possible answer
+    - Move left to find first occurrence
+  - Else:
+    - Move right
+
+- Returned `ans` as the insert position.
+
+### 🔹 Time Complexity:
+O(log n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Binary Search Variant  
+Lower Bound
+
+### 🔹 Mistakes Made:
+- Initially returned immediately on finding target instead of following lower bound pattern.
+- Needed clarity on why continuing search ensures correct insertion index.
+- Understanding that this problem is identical to lower bound.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 
 # 📊 Progress Tracker
 
@@ -939,6 +991,7 @@ First Valid Position Search
 | Heap | 0 |
 | Graphs | 0 |
 | DP | 0 |
+| Total | 23 |
 
 ---
 
