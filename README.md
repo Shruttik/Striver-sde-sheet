@@ -818,6 +818,59 @@ Array Frequency Tracking
 - Day 21:
 
 ---
+
+# 02️⃣ Binary Search
+
+---
+
+## 2️⃣2️⃣ Binary Search – 20 March (Day 8)
+
+### Topic:
+Array / Binary Search
+
+### Difficulty:
+Easy
+
+### 🔹 Approach:
+- The array is sorted, which allows the use of **Binary Search**.
+- Initialized two pointers:
+  - `low = 0`
+  - `high = n - 1`
+- Repeatedly calculated the middle index using:
+
+  `mid = low + (high - low) / 2`
+
+- Compared `nums[mid]` with the target:
+  - If equal → return `mid`
+  - If target is greater → search in right half → `low = mid + 1`
+  - If target is smaller → search in left half → `high = mid - 1`
+
+- Continued the process until `low > high`.
+- If target not found, returned `-1`.
+
+### 🔹 Time Complexity:
+O(log n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Binary Search  
+Divide and Conquer
+
+### 🔹 Mistakes Made:
+- Initially used `low = mid` instead of `low = mid + 1`, causing infinite loop.
+- Incorrectly updated `mid` instead of `high` in one condition.
+- Needed clarity on eliminating the mid element after comparison.
+- Learned importance of safe mid calculation to avoid overflow.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 # 📊 Progress Tracker
 
 | Topic | Problems Solved |
