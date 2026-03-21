@@ -974,6 +974,60 @@ Lower Bound
 
 ---
 
+## 2️⃣5️⃣ Search in Rotated Sorted Array – 21 March (Day 9)
+
+### Topic:
+Array / Binary Search
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- The array is sorted but rotated, so normal binary search cannot be applied directly.
+- Key observation:
+  - At any point, **at least one half (left or right) is always sorted**.
+
+- Used binary search with modified conditions:
+  - Calculated `mid = low + (high - low) / 2`
+  - If `nums[mid] == target`, returned `mid`
+
+- Checked which half is sorted:
+  - If `nums[low] <= nums[mid]` → Left half is sorted
+    - If target lies within `[nums[low], nums[mid])`
+      → move left → `high = mid - 1`
+    - Else → move right → `low = mid + 1`
+
+  - Else → Right half is sorted
+    - If target lies within `(nums[mid], nums[high]]`
+      → move right → `low = mid + 1`
+    - Else → move left → `high = mid - 1`
+
+- Continued until `low > high`
+
+### 🔹 Time Complexity:
+O(log n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Binary Search Variant  
+Search in Rotated Sorted Array  
+Identifying Sorted Half
+
+### 🔹 Mistakes Made:
+- Used `<` instead of `<=` while checking sorted half.
+- Incorrectly used `high = mid` instead of `high = mid - 1`, causing infinite loop risk.
+- Needed clarity on why one half is always sorted.
+- Confusion in choosing correct range conditions for left and right halves.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 
 # 📊 Progress Tracker
 
@@ -981,7 +1035,7 @@ Lower Bound
 |------|----------------|
 | Arrays | 21 |
 | Sorting | 0 |
-| Binary Search | 3 |
+| Binary Search | 4 |
 | Recursion | 0 |
 | Linked List | 0 |
 | Stack & Queue | 0 |
@@ -991,7 +1045,7 @@ Lower Bound
 | Heap | 0 |
 | Graphs | 0 |
 | DP | 0 |
-| Total | 23 |
+| Total | 25 |
 
 ---
 
