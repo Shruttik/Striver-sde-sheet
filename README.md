@@ -1028,6 +1028,61 @@ Identifying Sorted Half
 
 ---
 
+## 2️⃣6️⃣ Find Minimum in Rotated Sorted Array – 21 March (Day 9)
+
+### Topic:
+Array / Binary Search
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- The array is sorted but rotated, so the minimum element lies in the **unsorted portion**.
+- Used a modified binary search to locate the minimum efficiently.
+
+- Initialized:
+  - `low = 0`
+  - `high = n - 1`
+
+- While `low < high`:
+  - Calculated `mid = low + (high - low) / 2`
+
+- Compared `nums[mid]` with `nums[high]`:
+  - If `nums[mid] > nums[high]`:
+    - Minimum lies in the right half
+    - Move right → `low = mid + 1`
+  - Else:
+    - Minimum lies in the left half (including mid)
+    - Move left → `high = mid`
+
+- Loop ends when `low == high`, pointing to the minimum element.
+- Returned `nums[low]`.
+
+### 🔹 Time Complexity:
+O(log n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Binary Search Variant  
+Finding Minimum in Rotated Sorted Array  
+Boundary Search
+
+### 🔹 Mistakes Made:
+- Initially used logic from rotated search problem instead of minimum finding logic.
+- Used `low = mid` causing infinite loop.
+- Incorrect loop condition (`low <= high` instead of `low < high`).
+- Tried maintaining an `ans` variable unnecessarily.
+- Needed clarity on why `high = mid` (not `mid - 1`) since mid can be the answer.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 
 # 📊 Progress Tracker
 
