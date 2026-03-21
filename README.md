@@ -1083,6 +1083,56 @@ Boundary Search
 
 ---
 
+## 2️⃣7️⃣ Single Element in Sorted Array – 21 March (Day 9)
+
+### Topic:
+Array / Binary Search
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- The array is sorted and every element appears twice except one.
+- Observed pattern:
+  - Before single element → pairs start at even index
+  - After single element → pattern shifts
+
+- Used binary search with index parity:
+  - Calculated `mid = low + (high - low) / 2`
+  - If `mid` is odd → adjusted to even (`mid--`)
+
+- Checked:
+  - If `nums[mid] == nums[mid+1]`
+    - Pair is valid → single is on right → `low = mid + 2`
+  - Else:
+    - Pair is broken → single is on left → `high = mid`
+
+- Loop continues until `low == high`
+- Returned `nums[low]`
+
+### 🔹 Time Complexity:
+O(log n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Binary Search Variant  
+Index Parity Technique  
+Pair Pattern Observation
+
+### 🔹 Mistakes Made:
+- Initially returned `nums[mid]` instead of `nums[low]`
+- Needed clarity on why mid must be adjusted to even index
+- Understanding shifting pair pattern after single element
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 
 # 📊 Progress Tracker
 
@@ -1090,7 +1140,7 @@ Boundary Search
 |------|----------------|
 | Arrays | 21 |
 | Sorting | 0 |
-| Binary Search | 4 |
+| Binary Search | 6 |
 | Recursion | 0 |
 | Linked List | 0 |
 | Stack & Queue | 0 |
@@ -1100,7 +1150,7 @@ Boundary Search
 | Heap | 0 |
 | Graphs | 0 |
 | DP | 0 |
-| Total | 25 |
+| Total | 27 |
 
 ---
 
