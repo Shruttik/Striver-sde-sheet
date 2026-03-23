@@ -1181,6 +1181,67 @@ Peak Finding using Slope Logic
 
 ---
 
+## 2️⃣9️⃣ Median of Two Sorted Arrays – 22 March (Day 10)
+
+### Topic:
+Array / Binary Search
+
+### Difficulty:
+Hard
+
+### 🔹 Approach:
+- Instead of merging arrays, used **binary search on the smaller array** to partition both arrays.
+
+- Let:
+  - `cut1` = number of elements taken from `nums1`
+  - `cut2` = remaining elements taken from `nums2` such that left half has `(n + m + 1)/2` elements
+
+- Derived:
+  - `cut2 = (n + m + 1)/2 - cut1`
+
+- Identified boundary elements:
+  - `l1 = nums1[cut1 - 1]` or `-∞` if `cut1 == 0`
+  - `l2 = nums2[cut2 - 1]` or `-∞` if `cut2 == 0`
+  - `r1 = nums1[cut1]` or `+∞` if `cut1 == n`
+  - `r2 = nums2[cut2]` or `+∞` if `cut2 == m`
+
+- Valid partition condition:
+  - `l1 <= r2 AND l2 <= r1`
+
+- If valid:
+  - If total length is even:
+    - Median = `(max(l1, l2) + min(r1, r2)) / 2.0`
+  - Else:
+    - Median = `max(l1, l2)`
+
+- If invalid:
+  - If `l1 > r2` → move left → `high = cut1 - 1`
+  - Else → move right → `low = cut1 + 1`
+
+### 🔹 Time Complexity:
+O(log(min(n, m)))
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Binary Search on Answer  
+Partitioning Technique  
+Two Sorted Arrays Median
+
+### 🔹 Mistakes Made:
+- Used `size - 1` instead of actual sizes for `n` and `m`
+- Incorrect boundary check (`cut2 == n` instead of `cut2 == m`)
+- Confused index vs count in partition logic
+- Needed clarity on how `cut1` determines `cut2`
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 
 # 📊 Progress Tracker
 
