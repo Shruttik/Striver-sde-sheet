@@ -1242,6 +1242,54 @@ Two Sorted Arrays Median
 
 ---
 
+## 3️⃣0️⃣ Kth Missing Positive Number – 22 March (Day 10)
+
+### Topic:
+Array / Binary Search
+
+### Difficulty:
+Easy
+
+### 🔹 Approach:
+- Instead of explicitly generating missing numbers, calculated how many numbers are missing up to each index.
+
+- Key formula:
+  - `missing(i) = arr[i] - (i + 1)`
+  - This gives the count of missing numbers before index `i`.
+
+- Used binary search to find the **first index where missing ≥ k**:
+  - If `missing(mid) < k` → move right → `low = mid + 1`
+  - Else → move left → `high = mid - 1`
+
+- After binary search:
+  - `low` represents how many elements from array are before the k-th missing number
+  - Final answer is:
+  
+    `answer = low + k`
+
+### 🔹 Time Complexity:
+O(log n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Binary Search on Answer  
+Missing Count Technique
+
+### 🔹 Mistakes Made:
+- Initially tried generating missing numbers instead of counting them.
+- Confusion in understanding why `arr[i] - (i+1)` gives missing count.
+- Needed clarity on why binary search finds first index where missing ≥ k.
+- Took time to understand why final answer is `low + k`.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 
 # 📊 Progress Tracker
 
