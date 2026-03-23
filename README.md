@@ -1133,6 +1133,54 @@ Pair Pattern Observation
 
 ---
 
+## 2️⃣8️⃣ Find Peak Element – 22 March (Day 10)
+
+### Topic:
+Array / Binary Search
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- A peak element is defined as an element greater than its neighbors.
+- Instead of checking both sides, used a binary search based on slope observation.
+
+- Key idea:
+  - If `nums[mid] < nums[mid+1]` → we are on an increasing slope → peak lies on the right
+  - If `nums[mid] > nums[mid+1]` → we are on a decreasing slope → peak lies on the left (including mid)
+
+- Used binary search:
+  - Calculated `mid = low + (high - low) / 2`
+  - If increasing → `low = mid + 1`
+  - Else → `high = mid`
+
+- Continued until `low == high`, which points to a peak element.
+- Returned index `low`.
+
+### 🔹 Time Complexity:
+O(log n)
+
+### 🔹 Space Complexity:
+O(1)
+
+### 🔹 Pattern Used:
+Binary Search Variant  
+Peak Finding using Slope Logic
+
+### 🔹 Mistakes Made:
+- Initially checked both `mid-1` and `mid+1`, causing out-of-bounds errors.
+- Used incorrect peak condition (`<` instead of `>`).
+- Caused infinite loop by using `low = mid`.
+- Tried maintaining an extra `ans` variable unnecessarily.
+- Needed clarity on why `high = mid` and not `mid - 1`.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 
 # 📊 Progress Tracker
 
