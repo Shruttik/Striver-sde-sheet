@@ -1290,6 +1290,58 @@ Missing Count Technique
 
 ---
 
+## 3️⃣1️⃣ Subsets – 22 March (Day 11)
+
+### Topic:
+Recursion / Backtracking
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- The problem requires generating all possible subsets (power set) of a given array.
+- Used **backtracking with recursion** to explore all possible combinations.
+
+- Defined a recursive function:
+  - `solve(index, nums, ds, ans)`
+  - `ds` → current subset
+  - `ans` → stores all subsets
+
+- At every recursive call:
+  - Stored the current subset in `ans`
+
+- Used a loop from current index to end:
+  - Picked element `nums[i]`
+  - Added it to current subset (`ds.push_back(nums[i])`)
+  - Recurred for next index (`i + 1`)
+  - Backtracked by removing element (`ds.pop_back()`)
+
+- This ensures all combinations are explored without repetition.
+
+### 🔹 Time Complexity:
+O(2^n)
+
+### 🔹 Space Complexity:
+O(n) (recursion stack) + O(2^n * n) (output)
+
+### 🔹 Pattern Used:
+Backtracking  
+Subset Generation  
+Recursion Tree Exploration
+
+### 🔹 Mistakes Made:
+- Initially confused between pick/not-pick recursion and loop-based approach.
+- Needed clarity on why subset is added at every recursive call.
+- Understanding importance of `pop_back()` for backtracking.
+- Confusion about using `i + 1` instead of `index + 1`.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 
 # 📊 Progress Tracker
 
