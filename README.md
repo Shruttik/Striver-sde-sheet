@@ -1359,7 +1359,7 @@ Recursion Tree Exploration
 | Heap | 0 |
 | Graphs | 0 |
 | DP | 0 |
-| Total | 27 |
+| Total | 30 |
 
 ---
 
