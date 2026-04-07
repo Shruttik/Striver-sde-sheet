@@ -1342,6 +1342,68 @@ Recursion Tree Exploration
 
 ---
 
+## 3️⃣2️⃣ Subsets II – 22 March (Day 11)
+
+### Topic:
+Recursion / Backtracking
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- Similar to the Subsets problem, but the array may contain duplicates.
+- Goal is to generate all subsets **without duplicate subsets**.
+
+- First sorted the array:
+  - `sort(nums.begin(), nums.end())`
+  - This groups duplicate elements together, making it easier to skip them.
+
+- Used backtracking with recursion:
+  - Defined `solve(index, nums, ds, ans)`
+  - `ds` → current subset
+  - `ans` → stores all unique subsets
+
+- At every recursive call:
+  - Stored the current subset in `ans`
+
+- Used a loop from `index → n`:
+  - Before picking an element, checked:
+  
+    `if(i > index && nums[i] == nums[i-1]) continue;`
+  
+  - This ensures:
+    - Duplicate elements are skipped at the **same recursion level**
+    - Prevents generating duplicate subsets
+
+- Then:
+  - Pick element → `ds.push_back(nums[i])`
+  - Recurse → `solve(i + 1, ...)`
+  - Backtrack → `ds.pop_back()`
+
+### 🔹 Time Complexity:
+O(2^n)
+
+### 🔹 Space Complexity:
+O(n) (recursion stack) + O(2^n * n) (output)
+
+### 🔹 Pattern Used:
+Backtracking  
+Subset Generation with Duplicates  
+Duplicate Skipping Technique
+
+### 🔹 Mistakes Made:
+- Initially forgot to sort the array before handling duplicates.
+- Confusion about why `i > index` is needed in duplicate check.
+- Needed clarity on why skipping duplicates only at same recursion level works.
+- Considered using set, but learned optimized approach avoids extra space.
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 
 # 📊 Progress Tracker
 
