@@ -1404,6 +1404,58 @@ Duplicate Skipping Technique
 
 ---
 
+## 3️⃣3️⃣ Permutations – 22 March (Day 11)
+
+### Topic:
+Recursion / Backtracking
+
+### Difficulty:
+Medium
+
+### 🔹 Approach:
+- The goal is to generate all permutations of distinct elements.
+- Used backtracking with a `visited` array to track used elements.
+
+- Defined recursive function:
+  - `solve(nums, ans, ds, visited)`
+  - `ds` → current permutation
+  - `visited[i]` → whether element is used
+
+- At each step:
+  - Loop through all elements
+  - If not visited:
+    - Mark visited
+    - Add to current permutation
+    - Recurse
+    - Backtrack (unmark + remove)
+
+- Base case:
+  - When `ds.size() == nums.size()`
+  - Store permutation in `ans`
+
+### 🔹 Time Complexity:
+O(n! * n)
+
+### 🔹 Space Complexity:
+O(n) (recursion stack + visited)
+
+### 🔹 Pattern Used:
+Backtracking  
+Permutation Generation  
+Visited Array Technique
+
+### 🔹 Mistakes Made:
+- Forgot to initialize `visited` array with size `n`
+- Needed clarity on why `visited` is required
+- Understanding importance of backtracking (`visited[i] = false`)
+
+### 🔹 Revision Dates:
+- Day 3:
+- Day 7:
+- Day 21:
+
+---
+
 
 # 📊 Progress Tracker
 
@@ -1421,7 +1473,7 @@ Duplicate Skipping Technique
 | Heap | 0 |
 | Graphs | 0 |
 | DP | 0 |
-| Total | 31 |
+| Total | 33 |
 
 ---
 
